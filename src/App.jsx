@@ -1,6 +1,7 @@
 import ResumeTemplate from "./components/ResumeTemplate";
 import ResumeForm from "./components/ResumeForm";
 import { useState } from "react";
+import ShadRForm from "./components/ShadcnCompo/ShadRForm";
 
 const personalTemplate = {
   name:"Your Name",
@@ -48,7 +49,8 @@ function App() {
     <>
       <div className="grid grid-cols-1 2xl:grid-cols-2">
         <div className="justify-self-center">
-          <ResumeForm />
+          {/* <ResumeForm /> */}
+          <ShadRForm/>
         </div>
         <div className="justify-self-center">
           <ResumeTemplate />
