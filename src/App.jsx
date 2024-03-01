@@ -1,6 +1,5 @@
 import ResumeTemplate from "./components/ResumeTemplate";
 import ResumeForm from "./components/ResumeForm";
-import { useState } from "react";
 import ShadRForm from "./components/ShadcnCompo/ShadRForm";
 
 const personalTemplate = {
@@ -31,20 +30,7 @@ const sectionTemplate = {
 }
 
 
-function App() {
-
-  const [personal,setPersonal] = useState(personalTemplate);
-
-  const [exp1,setExp1] = useState(experienceTemplate);
-  const [exp2,setExp2] = useState(experienceTemplate);
-  
-  const [edu1,setEdu1] = useState(educationTemplate);
-  const [edu2,setEdu2] = useState(educationTemplate);
-  
-  const [sec1,setSec1] = useState(sectionTemplate);
-  const [sec2,setSec2] = useState(sectionTemplate);
-  const [sec3,setSec3] = useState(sectionTemplate);
-  
+function App() {  
   return (
     <>
       <div className="grid grid-cols-1 2xl:grid-cols-2">
