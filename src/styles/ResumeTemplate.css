@@ -6,23 +6,19 @@
     --primary-color: rgb(255, 235, 14);
 }
 
-
-
-.page{
-    max-width: 21cm;
-    min-height: 29.7cm;  
+.page{ 
     border: 1px solid ;
     padding: 80px 40px 20px 40px;
     font-size: 62.5%;
     font-family: 'Quicksand';
+    min-height: 100vh;
+    max-width: var((0.707*100)vh);
 }
 
 .header{
     display: grid;
     grid-template: auto/ 70fr 30fr;
 }
-
-
 
 
 .header h1{
@@ -50,8 +46,7 @@
     color: var(--black-med);
     letter-spacing: 2px;
     margin: 30px 0px 10px 0px ;
-    font-size: 13px;
-    
+    font-size: 1.3em;
 }
 
 
@@ -92,17 +87,6 @@
     font-size: 1.5em;
 }
 
-.achieve-block h2{
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.achieve-block p{
-    font-size: 13px;
-    color: var(--grey);
-}
-
-
 
 /* Sidebar Styling*/
 
@@ -122,7 +106,7 @@
     color: var(--black-med);
     letter-spacing: 2px;
     margin: 30px 0px 10px 0px ;
-    font-size: 13px;
+    font-size: 1.3em;
 }
 
 .tag-block div{

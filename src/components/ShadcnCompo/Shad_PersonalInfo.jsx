@@ -1,8 +1,12 @@
 import React from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
-
+import { useDispatch } from "react-redux";
+import { updateName,updateProfession,updateEmail,updatePhone,updateWebsite } from "@/features/resume/resumeSlice";
 function Shad_PersonalInfo() {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="mb-10">
@@ -16,25 +20,25 @@ function Shad_PersonalInfo() {
       <div className="mb-2 grid gap-3 md:grid-cols-2 grid-cols-1">
         <div>
           <Label>Name</Label>
-          <Input type="text" placeholder="Enter Name" />
+          <Input onChange={(e)=>dispatch(updateName(e.target.value))} type="text" placeholder="Enter Name" />
         </div>
         <div>
           <Label>Profession</Label>
-          <Input type="text" placeholder="Enter Profession" />
+          <Input onChange={(e)=>dispatch(updateProfession(e.target.value))} type="text" placeholder="Enter Profession" />
         </div>
       </div>
       <div className="grid gap-3 md:grid-cols-3 grid-cols-1">
         <div>
           <Label>Email</Label>
-          <Input type="email" placeholder="Enter Email" />
+          <Input onChange={(e)=>dispatch(updateEmail(e.target.value))} type="email" placeholder="Enter Email" />
         </div>
         <div>
           <Label>Phone</Label>
-          <Input type="text" placeholder="Enter Phone No." />
+          <Input onChange={(e)=>dispatch(updatePhone(e.target.value))} type="text" placeholder="Enter Phone No." />
         </div>
         <div>
           <Label>Website</Label>
-          <Input type="text" placeholder="Enter Website" />
+          <Input onChange={(e)=>dispatch(updateWebsite(e.target.value))} type="text" placeholder="Enter Website" />
         </div>
       </div>
       <div className="mx-2 my-6 border-t border-dashed border-spacing-10 border-collapse border-gray-300"/>

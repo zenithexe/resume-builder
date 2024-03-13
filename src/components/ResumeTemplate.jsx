@@ -1,16 +1,17 @@
+import { useSelector } from "react-redux";
 import "../styles/ResumeTemplate.css";
 
-export default function ResumeTemplate({
-  
-}) {
+export default function ResumeTemplate() {
+  const state = useSelector((state) => state);
+  console.log(state);
+
   return (
     <div class="page">
       <div class="header">
         <div id="about">
-          <h1>Your Name</h1>
-          <p id="profession">Senior Product Designer</p>
+          <h1>{state.personal.name}</h1>
+          <p id="profession">{state.personal.profession}</p>
         </div>
-        
       </div>
       <div class="content">
         <div class="main-column">
@@ -19,26 +20,16 @@ export default function ResumeTemplate({
               <span class="yellow-bg">Experience</span>
             </h4>
             <div id="experience-1" class="exp-block">
-              <h2>Senior UI/UX Product Designer</h2>
-              <p class="institution-name">Enterprise Name</p>
-              <p class="timeline">Aug 2018 - Present - 1 year, Paris</p>
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                adipisci pariatur quasi voluptate vel placeat modi. Eum numquam
-                ex aut atque quod ipsa voluptate eaque? Alias rerum neque
-                explicabo nam.
-              </p>
+              <h2>{state.experience.exp1.experience}</h2>
+              <p class="institution-name">{state.experience.exp1.company}</p>
+              <p class="timeline">{state.experience.exp1.time}</p>
+              <p class="description">{state.experience.exp1.description}</p>
             </div>
             <div id="experience-2" class="exp-block">
-              <h2>Senior UI/UX Product Designer</h2>
-              <p class="institution-name">Enterprise Name</p>
-              <p class="timeline">Aug 2018 - Present - 1 year, Paris</p>
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                adipisci pariatur quasi voluptate vel placeat modi. Eum numquam
-                ex aut atque quod ipsa voluptate eaque? Alias rerum neque
-                explicabo nam.
-              </p>
+              <h2>{state.experience.exp2.experience}</h2>
+              <p class="institution-name">{state.experience.exp2.company}</p>
+              <p class="timeline">{state.experience.exp2.time}</p>
+              <p class="description">{state.experience.exp2.description}</p>
             </div>
           </div>
           <div id="education-list">
@@ -47,39 +38,32 @@ export default function ResumeTemplate({
             </h4>
 
             <div id="education-1" class="edu-block">
-              <h2>Bachelor of Technology, CSE</h2>
-              <p class="institution-name">Netaji Subhash Engineering College</p>
-              <p class="timeline">2021 - Present</p>
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                adipisci pariatur quasi voluptate vel placeat modi.
-              </p>
+              <h2>{state.education.edu1.education}</h2>
+              <p class="institution-name">{state.education.edu1.institute}</p>
+              <p class="timeline">{state.education.edu1.time}</p>
+              <p class="description">{state.education.edu1.description}</p>
             </div>
             <div id="education-2" class="edu-block">
-              <h2>High School Education</h2>
-              <p class="institution-name">Netaji Subhash Engineering College</p>
-              <p class="timeline">2021 - Present</p>
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-                adipisci pariatur quasi voluptate vel placeat modi.
-              </p>
+            <h2>{state.education.edu2.education}</h2>
+              <p class="institution-name">{state.education.edu2.institute}</p>
+              <p class="timeline">{state.education.edu2.time}</p>
+              <p class="description">{state.education.edu2.description}</p>
             </div>
           </div>
-
-          
         </div>
         <div id="sidebar">
-        <div id="contact" class="contact-section">
-          <p id="email">yourmail@gmail.com</p>
-          <p id="phone-no">+91 1234567890</p>
-          <p id="website">example.com</p>
-        </div>
+          <div id="contact" class="contact-section">
+            <p id="email">{state.personal.email}</p>
+            <p id="phone-no">{state.personal.phone}</p>
+            <p id="website">{state.personal.website}</p>
+          </div>
           <div id="tag-section-1" class="tag-block">
             <h1 id="tag-section-1-heading">
-              <span class="yellow-bg">Skills</span>
+              <span class="yellow-bg">{state.sections[0].heading}</span>
             </h1>
             <div class="tags">
-              <span class="tag-item">Java</span>
+              {state.sections[0].terms.map(item => <span class="tag-item">{item}</span>)}
+              {/* <span class="tag-item">Java</span>
               <span class="tag-item">Python</span>
               <span class="tag-item">Javascript</span>
               <span class="tag-item">C++</span>
@@ -87,7 +71,7 @@ export default function ResumeTemplate({
               <span class="tag-item">MongoDB</span>
               <span class="tag-item">Node.js</span>
               <span class="tag-item">Rust</span>
-              <span class="tag-item">HTML3/CSS</span>
+              <span class="tag-item">HTML3/CSS</span> */}
             </div>
           </div>
           <div id="tag-section-2" class="tag-block">

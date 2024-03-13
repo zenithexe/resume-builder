@@ -1,8 +1,13 @@
+import { useState } from "react";
 import InputField from "./InputField";
 import TextArea from "./TextArea";
 import TimelineInput from "./TimelineInput";
+import { useDispatch } from "react-redux";
 
 function EducationForm() {
+
+
+
   return (
     <>
       <div className="mb-10">
@@ -34,6 +39,7 @@ function EducationForm() {
       </div>
       </div>
       <div className="mx-2 my-6 border-t border-dashed border-spacing-10 border-collapse border-gray-300"></div>
+     
     </>
   );
 }

@@ -2,8 +2,13 @@ import React from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
+import { useDispatch} from "react-redux";
+import { updateExperience1, updateCompany1, updateExDescription1,updateExTime1,updateExperience2, updateCompany2, updateExDescription2, updateExTime2  } from "@/features/resume/resumeSlice";
 
 function Shad_Experience() {
+
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="mb-10">
@@ -18,19 +23,19 @@ function Shad_Experience() {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label>Experience #1</Label>
-            <Input type="text" placeholder="" />
+            <Input onChange={(e)=>dispatch(updateExperience1(e.target.value))} type="text" placeholder="" />
           </div>
           <div>
             <Label>Company Name</Label>
-            <Input type="text" placeholder="" />
+            <Input onChange={(e)=>dispatch(updateCompany1(e.target.value))} type="text" placeholder="" />
           </div>
           <div>
             <Label>Timeline</Label>
-            <Input type="text" placeholder="" />
+            <Input onChange={(e)=>dispatch(updateExTime1(e.target.value))} type="text" placeholder="" />
           </div>
           <div>
             <Label>Description</Label>
-            <Textarea type="text" placeholder="" />
+            <Textarea onChange={(e)=>dispatch(updateExDescription1(e.target.value))} type="text" placeholder="" />
           </div>
         </div>
       </div>
@@ -38,20 +43,20 @@ function Shad_Experience() {
       <div className="">
         <div className="grid grid-cols-2 gap-4">
         <div>
-            <Label>Experience #2</Label>
-            <Input type="text" placeholder="" />
+            <Label>Experience #1</Label>
+            <Input onChange={(e)=>dispatch(updateExperience2(e.target.value))} type="text" placeholder="" />
           </div>
           <div>
             <Label>Company Name</Label>
-            <Input type="text" placeholder="" />
+            <Input onChange={(e)=>dispatch(updateCompany2(e.target.value))} type="text" placeholder="" />
           </div>
           <div>
             <Label>Timeline</Label>
-            <Input type="text" placeholder="" />
+            <Input onChange={(e)=>dispatch(updateExTime2(e.target.value))} type="text" placeholder="" />
           </div>
           <div>
             <Label>Description</Label>
-            <Textarea type="text" placeholder="" />
+            <Textarea onChange={(e)=>dispatch(updateExDescription2(e.target.value))} type="text" placeholder="" />
           </div>
         </div>
       </div>

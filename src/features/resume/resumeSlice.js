@@ -61,99 +61,99 @@ export const resumeSlice = createSlice({
   initialState,
   reducers:{
     updateName: (state,actions)=>{
-      state.personal.name=actions.payload.name
+      state.personal.name=actions.payload;
     },
 
     updateProfession: (state,actions)=>{
-      state.personal.profession=actions.payload.profession;
+      state.personal.profession=actions.payload;
     },
 
     updateEmail: (state,actions)=>{
-      state.personal.email=actions.payload.email;
+      state.personal.email=actions.payload;
     },
 
     updatePhone: (state,actions)=>{
-      state.personal.phone=actions.payload.phone;
+      state.personal.phone=actions.payload;
     },
 
     updateWebsite: (state,actions)=>{
-      state.personal.website=actions.payload.website;
+      state.personal.website=actions.payload;
     },
 
     updateEducation1: (state,actions)=>{
-      state.education.edu1.education=actions.payload.education;
+      state.education.edu1.education=actions.payload;
     },
 
     updateInstitute1: (state,actions)=>{
-      state.education.edu1.institute=actions.payload.institute;
+      state.education.edu1.institute=actions.payload;
     },
 
     updateEdDescription1: (state,actions)=>{
-      state.education.edu1.description=actions.payload.description;
+      state.education.edu1.description=actions.payload;
     },
 
     updateEdTime1: (state,actions)=>{
-      state.education.edu1.time=actions.payload.time;
+      state.education.edu1.time=actions.payload;
     },
 
     updateEducation2: (state,actions)=>{
-      state.education.edu2.education=actions.payload.education;
+      state.education.edu2.education=actions.payload;
     },
 
     updateInstitute2: (state,actions)=>{
-      state.education.edu2.institute=actions.payload.institute;
+      state.education.edu2.institute=actions.payload;
     },
 
     updateEdDescription2: (state,actions)=>{
-      state.education.edu2.description=actions.payload.description;
+      state.education.edu2.description=actions.payload;
     },
 
     updateEdTime2: (state,actions)=>{
-      state.education.edu2.time=actions.payload.time;
+      state.education.edu2.time=actions.payload;
     },
 
     updateExperience1: (state,actions)=>{
-      state.experience.exp1.experience=actions.payload.experience;
+      state.experience.exp1.experience=actions.payload;
     },
 
     updateCompany1: (state,actions)=>{
-      state.experience.exp1.company=actions.payload.company;
+      state.experience.exp1.company=actions.payload;
     },
 
     updateExDescription1: (state,actions)=>{
-      state.experience.exp1.description=actions.payload.description;
+      state.experience.exp1.description=actions.payload;
     },
 
     updateExTime1: (state,actions)=>{
-      state.experience.exp1.time=actions.payload.time;
+      state.experience.exp1.time=actions.payload;
     },
 
     updateExperience2: (state,actions)=>{
-      state.experience.exp2.experience=actions.payload.experience;
+      state.experience.exp2.experience=actions.payload;
     },
 
     updateCompany2: (state,actions)=>{
-      state.experience.exp2.company=actions.payload.company;
+      state.experience.exp2.company=actions.payload;
     },
 
     updateExDescription2: (state,actions)=>{
-      state.experience.exp2.description=actions.payload.description;
+      state.experience.exp2.description=actions.payload;
     },
 
     updateExTime2: (state,actions)=>{
-      state.experience.exp2.time=actions.payload.time;
+      state.experience.exp2.time=actions.payload;
     },
 
     updateSecHeading1:(state,actions)=>{
-      state.sections[0].heading=actions.payload.heading;
+      state.sections[0].heading=actions.payload;
     },
 
     updateTerms1:(state,actions)=>{
-      state.sections[0].terms.push(actions.payload)
+      state.sections[0].terms.push(actions.payload);
     },
 
     updateSecHeading2:(state,actions)=>{
-      state.sections[1].heading=actions.payload.heading;
+      state.sections[1].heading=actions.payload;
     },
 
     updateTerms2:(state,actions)=>{
@@ -161,7 +161,7 @@ export const resumeSlice = createSlice({
     },
 
     updateSecHeading3:(state,actions)=>{
-      state.sections[2].heading=actions.payload.heading;
+      state.sections[2].heading=actions.payload;
     },
 
     updateTerms3:(state,actions)=>{
