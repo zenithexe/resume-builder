@@ -44,7 +44,7 @@ export default function ResumeTemplate() {
               <p class="description">{state.education.edu1.description}</p>
             </div>
             <div id="education-2" class="edu-block">
-            <h2>{state.education.edu2.education}</h2>
+              <h2>{state.education.edu2.education}</h2>
               <p class="institution-name">{state.education.edu2.institute}</p>
               <p class="timeline">{state.education.edu2.time}</p>
               <p class="description">{state.education.edu2.description}</p>
@@ -61,36 +61,57 @@ export default function ResumeTemplate() {
             <h1 id="tag-section-1-heading">
               <span class="yellow-bg">{state.sections[0].heading}</span>
             </h1>
-            <div class="tags">
-              {state.sections[0].terms.map(item => <span class="tag-item">{item}</span>)}
-              {/* <span class="tag-item">Java</span>
-              <span class="tag-item">Python</span>
-              <span class="tag-item">Javascript</span>
-              <span class="tag-item">C++</span>
-              <span class="tag-item">React.js</span>
-              <span class="tag-item">MongoDB</span>
-              <span class="tag-item">Node.js</span>
-              <span class="tag-item">Rust</span>
-              <span class="tag-item">HTML3/CSS</span> */}
-            </div>
+            {state.sections[0].list ? (
+              <div class="tags-list">
+                {state.sections[0].terms.map((item) => (
+                  <span class="tag-list-item">{item}</span>
+                ))}
+              </div>
+            ) : (
+              <div class="tags">
+                {state.sections[0].terms.map((item) => (
+                  <span class="tag-item">{item}</span>
+                ))}
+              </div>
+            )}
           </div>
+
           <div id="tag-section-2" class="tag-block">
             <h1 id="tag-section-1-heading">
-              <span class="yellow-bg">Skills</span>
+              <span class="yellow-bg">{state.sections[1].heading}</span>
             </h1>
-            <div class="tags-list">
-              <span class="tag-list-item">Java</span>
-              <span class="tag-list-item">Python</span>
-              <span class="tag-list-item">Javascript</span>
-              <span class="tag-list-item">C++</span>
-              <span class="tag-list-item">React.js</span>
-              <span class="tag-list-item">MongoDB</span>
-              <span class="tag-list-item">Node.js</span>
-              <span class="tag-list-item">Rust</span>
-              <span class="tag-list-item">HTML3/CSS</span>
-            </div>
+            {state.sections[1].list ? (
+              <div class="tags-list">
+                {state.sections[1].terms.map((item) => (
+                  <span class="tag-list-item">{item}</span>
+                ))}
+              </div>
+            ) : (
+              <div class="tags">
+                {state.sections[1].terms.map((item) => (
+                  <span class="tag-item">{item}</span>
+                ))}
+              </div>
+            )}
           </div>
-          <div id="tag-section-3" class="tag-block"></div>
+          <div id="tag-section-3" class="tag-block">
+            <h1 id="tag-section-1-heading">
+              <span class="yellow-bg">{state.sections[2].heading}</span>
+            </h1>
+            {state.sections[2].list ? (
+              <div class="tags-list">
+                {state.sections[2].terms.map((item) => (
+                  <span class="tag-list-item">{item}</span>
+                ))}
+              </div>
+            ) : (
+              <div class="tags">
+                {state.sections[2].terms.map((item) => (
+                  <span class="tag-item">{item}</span>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

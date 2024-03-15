@@ -44,14 +44,17 @@ const initialState = {
     {
       heading: "Heading",
       terms: ["Term1", "Term2"],
+      list:false
     },
     {
       heading: "Heading",
       terms: ["Term1", "Term2"],
+      list:false
     },
     {
       heading: "Heading",
       terms: ["Term1", "Term2"],
+      list:false
     },
   ],
 };
@@ -149,7 +152,11 @@ export const resumeSlice = createSlice({
     },
 
     updateTerms1:(state,actions)=>{
-      state.sections[0].terms.push(actions.payload);
+      state.sections[0].terms=actions.payload;
+    },
+
+    updateIsList1:(state,actions)=>{
+      state.sections[0].list=actions.payload;
     },
 
     updateSecHeading2:(state,actions)=>{
@@ -157,7 +164,11 @@ export const resumeSlice = createSlice({
     },
 
     updateTerms2:(state,actions)=>{
-      state.sections[1].terms.push(actions.payload)
+      state.sections[1].terms = actions.payload;
+    },
+
+    updateIsList2:(state,actions)=>{
+      state.sections[1].list=actions.payload;
     },
 
     updateSecHeading3:(state,actions)=>{
@@ -165,8 +176,12 @@ export const resumeSlice = createSlice({
     },
 
     updateTerms3:(state,actions)=>{
-      state.sections[2].terms.push(actions.payload)
-    }
+      state.sections[2].terms=actions.payload;
+    },
+
+    updateIsList3:(state,actions)=>{
+      state.sections[2].list=actions.payload;
+    },
   }
 })
 
@@ -197,7 +212,10 @@ export const {
   updateSecHeading3,
   updateTerms1,
   updateTerms2,
-  updateTerms3
+  updateTerms3,
+  updateIsList1,
+  updateIsList2,
+  updateIsList3,
 } = resumeSlice.actions
 
 export default resumeSlice.reducer
