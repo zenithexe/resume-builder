@@ -3,7 +3,6 @@ import "../styles/ResumeTemplate.css";
 
 export default function ResumeTemplate() {
   const state = useSelector((state) => state);
-  console.log(state);
 
   return (
     <div class="page">
@@ -57,7 +56,68 @@ export default function ResumeTemplate() {
             <p id="phone-no">{state.personal.phone}</p>
             <p id="website">{state.personal.website}</p>
           </div>
-          <div id="tag-section-1" class="tag-block">
+          {state.sections[0].isVisible ? (
+            <div id="tag-section-1" class="tag-block">
+              <h1 id="tag-section-1-heading">
+                <span class="yellow-bg">{state.sections[0].heading}</span>
+              </h1>
+              {state.sections[0].list ? (
+                <div class="tags-list">
+                  {state.sections[0].terms.map((item) => (
+                    <span class="tag-list-item">{item}</span>
+                  ))}
+                </div>
+              ) : (
+                <div class="tags">
+                  {state.sections[0].terms.map((item) => (
+                    <span class="tag-item">{item}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : ""}
+          {state.sections[1].isVisible ? (
+            <div id="tag-section-1" class="tag-block">
+              <h1 id="tag-section-1-heading">
+                <span class="yellow-bg">{state.sections[1].heading}</span>
+              </h1>
+              {state.sections[1].list ? (
+                <div class="tags-list">
+                  {state.sections[1].terms.map((item) => (
+                    <span class="tag-list-item">{item}</span>
+                  ))}
+                </div>
+              ) : (
+                <div class="tags">
+                  {state.sections[1].terms.map((item) => (
+                    <span class="tag-item">{item}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : ""}
+          {state.sections[2].isVisible ? (
+            <div id="tag-section-1" class="tag-block">
+              <h1 id="tag-section-1-heading">
+                <span class="yellow-bg">{state.sections[2].heading}</span>
+              </h1>
+              {state.sections[2].list ? (
+                <div class="tags-list">
+                  {state.sections[2].terms.map((item) => (
+                    <span class="tag-list-item">{item}</span>
+                  ))}
+                </div>
+              ) : (
+                <div class="tags">
+                  {state.sections[2].terms.map((item) => (
+                    <span class="tag-item">{item}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : ""}
+          
+          {/* <div id="tag-section-1" class="tag-block">
             <h1 id="tag-section-1-heading">
               <span class="yellow-bg">{state.sections[0].heading}</span>
             </h1>
@@ -111,7 +171,7 @@ export default function ResumeTemplate() {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

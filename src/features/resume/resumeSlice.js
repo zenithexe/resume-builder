@@ -42,16 +42,19 @@ const initialState = {
   },
   sections: [
     {
+      isVisible:true,
       heading: "Heading",
       terms: ["Term1", "Term2"],
       list:false
     },
     {
+      isVisible:true,
       heading: "Heading",
       terms: ["Term1", "Term2"],
       list:false
     },
     {
+      isVisible:true,
       heading: "Heading",
       terms: ["Term1", "Term2"],
       list:false
@@ -182,6 +185,16 @@ export const resumeSlice = createSlice({
     updateIsList3:(state,actions)=>{
       state.sections[2].list=actions.payload;
     },
+
+    updateVisibleSec1:(state,actions)=>{
+      state.sections[0].isVisible=actions.payload;
+    },
+    updateVisibleSec2:(state,actions)=>{
+      state.sections[1].isVisible=actions.payload;
+    },
+    updateVisibleSec3:(state,actions)=>{
+      state.sections[2].isVisible=actions.payload;
+    }
   }
 })
 
@@ -216,6 +229,9 @@ export const {
   updateIsList1,
   updateIsList2,
   updateIsList3,
+  updateVisibleSec1,
+  updateVisibleSec2,
+  updateVisibleSec3
 } = resumeSlice.actions
 
 export default resumeSlice.reducer

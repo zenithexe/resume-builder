@@ -14,48 +14,114 @@ import {
 import { Button } from "../ui/button";
 import { RefreshCcw } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateEdDescription1, updateEdTime1, updateEducation1, updateInstitute1,updateEdDescription2, updateEdTime2, updateEducation2, updateInstitute2 } from "@/features/resume/resumeSlice";
+import {
+  updateEdDescription1,
+  updateEdTime1,
+  updateEducation1,
+  updateInstitute1,
+  updateEdDescription2,
+  updateEdTime2,
+  updateEducation2,
+  updateInstitute2,
+} from "@/features/resume/resumeSlice";
+import { Separator } from "../ui/separator";
+import { Alert, AlertTitle, AlertDescription } from "../ui/alert";
+import { AlertCircle } from "lucide-react";
 
 function Shad_Education() {
-
   const dispatch = useDispatch();
 
   return (
     <>
       <form>
         <div className="mb-10">
-          <h1 className="text-base font-semibold leading-7 text-gray-900">
-            Education
+          <h1 className="text-xl font-semibold leading-7 text-gray-900">
+            Educational Details
           </h1>
           <p className="mt-1 text-sm leading-6 text-gray-600">
-            Provide your personal work experience or internships
+            Provide your Educational Details.
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="">
-            <Label>Education 1</Label>
-            <Input onChange={(e)=>dispatch(updateEducation1(e.target.value))} type="text" placeholder="" />
-            <Label>Instituition Name</Label>
-            <Input onChange={(e)=>dispatch(updateInstitute1(e.target.value))} type="text" placeholder="" />
-            <Label>Description</Label>
-            <Textarea onChange={(e)=>dispatch(updateEdDescription1(e.target.value))} type="text" placeholder="" />
-            <Label>Timeline</Label>
-            <Input onChange={(e)=>dispatch(updateEdTime1(e.target.value))} type="text" placeholder="" />
+        <div className="">
+          <div className="grid md:grid-cols-2 gap-3">
+            <div>
+              <Label>Educational Degree</Label>
+              <Input
+                onChange={(e) => dispatch(updateEducation1(e.target.value))}
+                type="text"
+                placeholder="Enter Degree Name"
+              />
+      
+            </div>
+            <div>
+              <Label>Instituition Name</Label>
+              <Input
+                onChange={(e) => dispatch(updateInstitute1(e.target.value))}
+                type="text"
+                placeholder="Enter Institution Name"
+              />
+            </div>
+            <div>
+              <Label>Description</Label>
+              <Textarea
+                onChange={(e) => dispatch(updateEdDescription1(e.target.value))}
+                type="text"
+                placeholder="Details about your qualification."
+              />
+            </div>
+            <div>
+              <Label>Timeline</Label>
+              <Input
+                onChange={(e) => dispatch(updateEdTime1(e.target.value))}
+                type="text"
+                placeholder="Present - 2021"
+                className="w-1/2"
+              />
+            </div>
           </div>
+          <Separator className="my-5" />
 
-          <div className="">
-            <Label>Education 1</Label>
-            <Input onChange={(e)=>dispatch(updateEducation2(e.target.value))} type="text" placeholder="" />
-            <Label>Instituition Name</Label>
-            <Input onChange={(e)=>dispatch(updateInstitute2(e.target.value))} type="text" placeholder="" />
-            <Label>Description</Label>
-            <Textarea onChange={(e)=>dispatch(updateEdDescription2(e.target.value))} type="text" placeholder="" />
-            <Label>Timeline</Label>
-            <Input onChange={(e)=>dispatch(updateEdTime2(e.target.value))} type="text" placeholder="" />
+          <div className="grid md:grid-cols-2 gap-3">
+            <div>
+              <Label>Educational Degree</Label>
+              <Input
+                onChange={(e) => dispatch(updateEducation2(e.target.value))}
+                type="text"
+                placeholder="Enter Degree Name"
+              />
+            </div>
+            <div>
+              <Label>Instituition Name</Label>
+              <Input
+                onChange={(e) => dispatch(updateInstitute2(e.target.value))}
+                type="text"
+                placeholder="Enter Institution Name"
+              />
+            </div>
+            <div>
+              <Label>Description</Label>
+              <Textarea
+                onChange={(e) => dispatch(updateEdDescription2(e.target.value))}
+                type="text"
+                placeholder="Details about your qualification."
+              />
+            </div>
+            <div>
+              <Label>Timeline</Label>
+              <Input
+                onChange={(e) => dispatch(updateEdTime2(e.target.value))}
+                type="text"
+                placeholder="2021 - 2018"
+                className="w-1/2"
+              />
+            </div>
           </div>
         </div>
-        <div className="mx-2 my-6 border-t border-dashed border-spacing-10 border-collapse border-gray-300"></div>
       </form>
+      <Alert className="mt-4 bg-slate-100">
+        <AlertCircle className="h-4 w-4" />
+        <AlertTitle className="">You can mention your notable achievements in the description.</AlertTitle>
+      </Alert>
     </>
   );
 }
