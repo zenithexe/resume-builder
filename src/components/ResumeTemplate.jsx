@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
 import "../styles/ResumeTemplate.css";
+import { forwardRef } from "react";
 
 export default function ResumeTemplate() {
   const state = useSelector((state) => state);
 
   return (
-    <div class="page">
+    <div id="printable" class="page">
       <div class="header">
         <div id="about">
           <h1>{state.personal.name}</h1>
@@ -175,5 +176,5 @@ export default function ResumeTemplate() {
         </div>
       </div>
     </div>
-  );
+  )
 }
