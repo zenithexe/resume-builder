@@ -5,68 +5,53 @@ import { AspectRatio } from "./components/ui/aspect-ratio";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Button } from "./components/ui/button";
 import { useRef } from "react";
-import { useReactToPrint } from "react-to-print";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
+import { PDFViewer, usePDF } from "@react-pdf/renderer";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import MyDocument from "./documents/MyDocument.jsx";
+import { useSelector } from "react-redux";
+import {
+  exportComponentAsJPEG,
+  exportComponentAsPDF,
+  exportComponentAsPNG,
+} from "react-component-export-image";
+import React from "react";
+import { Download } from "lucide-react";
+
+const CompoPrint = React.forwardRef((props, ref) => (
+  <div className="w-fit" ref={ref}>
+    <ResumeTemplate />
+  </div>
+));
+
+// onClick={() =>
+//   exportComponentAsPNG(compoRef, {
+//     html2CanvasOptions: { scale: 2 },
+//   })
+// }
 
 function App() {
-  const resumePDFRef = useRef(null);
+  const compoRef = useRef();
 
-  const handlePDF = async () => {
-    const input = resumePDFRef.current;
-    try {
-      const canvas = await html2canvas(input,{scale:2});
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({
-        orientation: "portraint",
-        unit: "px",
-        format: "a4",
-      });
-
-      const pdfWidth = pdf.internal.pageSize.setWidth(canvas.width);
-      const pdfHeight = pdf.internal.pageSize.setHeight(canvas.height);
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-
-      // const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      // const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      // const imgY = 30;
-      pdf.addImage({
-        imageData:imgData,
-        format:"PNG",
-        x:0,
-        y:0,
-        width:imgWidth,
-        height:imgHeight
-      }
-      );
-      pdf.save("Resume.pdf");
-      console.log("PDF:: ",pdf);
-      console.log("Canvas :: ",canvas);
-      console.log("IMG ::", imgData);
-    } catch (error) {
-      console.log("Erro Generating PDF :", error);
-    }
-  };
-
-  const print = () => {
-    window.print()
-  }
+  const state = useSelector((state) => state);
 
   return (
     <>
-      <div className="grid h-screen bg-slate-50 grid-cols-1 2xl:grid-cols-5">
-        <div className="justify-self-center rounded-lg 2xl:col-span-3">
+      <div className="grid h-screen bg-slate-50 grid-cols-1 2xl:grid-cols-10">
+        <div className="flex flex-col items-center justify-self-center rounded-lg 2xl:col-span-5">
           <ShadResumeForm />
         </div>
-        <div className=" justify-self-center 2xl:col-span-2 2xl:mr-10">
-          <div className="bg-white" ref={resumePDFRef}>
-            <ResumeTemplate />
-          </div>
+        <div className="flex xl:flex-row flex-col  justify-self-center 2xl:justify-self-start 2xl:col-start-6 2xl:mr-10 ">
+          <Download
+            onClick={() =>
+              exportComponentAsPNG(compoRef, {
+                html2CanvasOptions: { scale: 2 },
+              })
+            }
+            className=" self-end md:self-start mt-[20px] ml-[10px] mr-[10px] h-[30px] w-[30px] border-inherit text-white bg-slate-800 p-[6px] rounded-full cursor-pointer"
+          />
+          <CompoPrint ref={compoRef} />
         </div>
       </div>
-      <Button onClick={handlePDF}>Print</Button>
-      <Button onClick={print}>Print 2</Button>
     </>
   );
 }

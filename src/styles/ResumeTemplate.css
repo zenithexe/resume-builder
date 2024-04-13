@@ -8,14 +8,14 @@
 
 .page{ 
     width: calc(0.707 * 100vh);
-    padding: 80px 40px 20px 40px;
+    padding: 60px 40px 20px 40px;
     font-size: 60.5%;
     font-family: 'Quicksand';
     min-height: 95vh;
     margin-top: 20px;
     min-width: 700px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color: white;
+    background-color: #ffffff;
 }
 
 @media (max-width:640px) {
