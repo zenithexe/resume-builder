@@ -11,12 +11,13 @@ import {
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { Settings2 } from "lucide-react";
+import CvLogo from "../assets/cv.png"
 
 function SiteHeader() {
   return (
     <>
       <div className="grid grid-cols-5 p-2 bg-slate-100 rounded-t-xl">
-        <img src="src\assets\cv.png" className="w-[50px] m-2" />
+        <img src={CvLogo} className="w-[50px] m-2" />
         <div className="col-start-2 col-span-3 justify-self-center self-center ml-2 text-2xl font-semibold leading-7 text-gray-700">
           Resume Builder
         </div>
